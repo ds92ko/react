@@ -1,38 +1,56 @@
-import TableRow from '@mui/material/TableRow';
-import TableCell from '@mui/material/TableCell';
-
+import TableRow from "@mui/material/TableRow";
+import TableCell from "@mui/material/TableCell";
+import CustomerDelete from "./CustomerDelete";
 
 function Customer(props) {
-    return (
-        <TableRow>
-            <TableCell align="center">{props.id}</TableCell>
-            <TableCell align="center"><img src={props.image} alt="profile" /></TableCell>
-            <TableCell align="center">{props.name}</TableCell>
-            <TableCell align="center">{props.birthday}</TableCell>
-            <TableCell align="center">{props.gender}</TableCell>
-            <TableCell align="center">{props.email}</TableCell>
-        </TableRow>
-    );
+  return (
+    //   <div><p>1</p>
+    //   <img src="https://placeimg.com/64/64/1" alt="profile" />
+    //   <p>고수</p>
+    //   <p>780604</p>
+    //   <p>남자</p>
+    //   <p>su@gmail.com</p></div>
+
+    //   <div><CustomerProfile id={props.id} image={props.image} name={props.name} />
+    //   <CustomerInfo
+    //     birthday={props.birthday}
+    //     gender={props.gender}
+    //     email={props.email} />
+    //  </div>
+
+    <TableRow>
+      <TableCell>{props.id}</TableCell>
+      <TableCell>
+        <img src={props.image} alt="profile" />
+      </TableCell>
+      <TableCell>{props.name}</TableCell>
+      <TableCell>{props.birthday}</TableCell>
+      <TableCell>{props.gender}</TableCell>
+      <TableCell>{props.email}</TableCell>
+      <TableCell>
+        <CustomerDelete id={props.id} />
+      </TableCell>
+    </TableRow>
+  );
 }
 
 function CustomerProfile(props) {
-    return (
-        <div>
-            <p>{props.id}</p>
-            <img src={props.image} alt="profile" />
-            <p>{props.name}</p>
-        </div>
-    );
+  return (
+    <div>
+      <p>{props.id}</p>
+      <img src={props.image} alt="profile" />
+      <p>{props.name}</p>
+    </div>
+  );
 }
 
 function CustomerInfo(props) {
-    return (
-        <div>
-            <p>{props.birthday}</p>
-            <p>{props.gender}</p>
-            <p>{props.email}</p>
-        </div>
-    );
+  return (
+    <div>
+      <p>{props.birthday}</p>
+      <p>{props.gender}</p>
+      <p>{props.email}</p>
+    </div>
+  );
 }
-
 export default Customer;
